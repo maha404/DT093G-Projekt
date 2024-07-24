@@ -12,8 +12,16 @@
         $user = new User(); 
         
         ?>
-        <h2 class="user_profile_title">Inlägg av: <?=$blog->getUserPosts($id)[0]['name'];?></h2>
+        <?php 
+         if($blog->getUserPosts($id) != []){
+        ?>
+            <h2 class="user_profile_title">Inlägg av: <?=$blog->getUserPosts($id)[0]['name'];?></h2>
         <?php
+         }
+        ?>
+        
+        <?php
+
         foreach($blog->getUserPosts($id) as $post){
             $partof = substr($post['content'], 0, 500);
         ?>
