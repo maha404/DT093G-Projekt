@@ -28,27 +28,24 @@ $error_message_content = '';
 $error_message_title = '';
 $error_photo = "";
 
-if($_POST['title'] === '' || $_POST['content'] === ''){
+if(isset($_POST['title']) && isset($_POST['content'])){
     $title = $_POST['title'];
     $content = $_POST['content'];
     $photo = $_FILES['file']['name'];
 
     if(!$blog->setTitle($title)){
-        
         $error_message_title = "<p class='error_msg'>Du måste ange en titel!</p>";
     } 
 
     if(!$blog->setPost($content)){
-        
         $error_message_content = "<p class='error_msg'>Du måste ange en text!</p>";
+    }
 
-    } 
-
-    if(!isset($photo) === '') {
-        $error_photo = "<p class='error_msg'> Du måste ladda upp en bild!</p>";
-    } else {
+    if($photo != '') {
         $blog->savePost();
-        //header("Location: user.php");
+    } else {
+        $error_photo = "<p class='error_msg'> Du måste ladda upp en bild!</p>";
+        // header("Location: user.php");
     }
 }
 
@@ -114,12 +111,12 @@ if(isset($_FILES['file'])) {
     <textarea name="content" id="content"></textarea>
     <br>
     <br>
-    <?php 
-    echo $error_photo;
-    echo $error_filesize;
-    echo $error_fileformat;
-    echo $error_filename;
-    ?>
+        <?php 
+            echo $error_photo;
+            echo $error_filesize;
+            echo $error_fileformat;
+            echo $error_filename;
+        ?>
     <label for="file">Ladda upp bild:</label>
     <br>
     <input type="file" name="file" id="file" >
