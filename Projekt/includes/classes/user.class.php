@@ -10,7 +10,7 @@ class User {
 
     //Constructor för att läsa in databasen
     function __construct () {
-        $this->db = new mysqli('localhost', 'blogportal', 'rQN74Dyw5B', 'blogportal'); //Ansluter till databasen
+        $this->db = new mysqli('localhost', 'blogportal', 'password', 'blogportal'); //Ansluter till databasen
             if($this->db->connect_errno > 0) { // Kollar efter felmeddelanden
                 die('Fel vid anslutning ['. $db->connect_error . ']');
             }

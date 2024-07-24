@@ -9,7 +9,7 @@ class BlogPost{
 
     //methods
     function __construct () {
-        $this->db = new mysqli('localhost', 'blogportal', 'rQN74Dyw5B', 'blogportal');//Ansluter till databasen
+        $this->db = new mysqli('localhost', 'blogportal', 'password', 'blogportal');//Ansluter till databasen
             if($this->db->connect_errno > 0) { // Kollar efter felmeddelanden
                 die('Fel vid anslutning ['. $db->connect_error . ']');
             }
@@ -50,11 +50,11 @@ function savePost () {
     $user_id = $_SESSION['user_id'];
     $user_name = $_SESSION['name'];
     $image = $_FILES["file"]["name"];
-
-    if(file_exists($image)) {
+    
+    if($image != '') {
         $sql = "INSERT INTO blog(title, content, name, post_email, image_url, user_id)VALUES('". $this->title . "' , '". $this->blogPost . "', '".$user_name."','".$user_email."', '".$image."', '".$user_id."');";
-        $result = mysqli_query($this->db, $sql); 
-    } 
+        $result = mysqli_query($this->db, $sql);
+    }
 }
 
 function getPost () : array {
