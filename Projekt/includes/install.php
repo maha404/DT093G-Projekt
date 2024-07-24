@@ -2,7 +2,7 @@
 <?php
 
 //anslut till databasen
-    $db = new mysqli('localhost', 'blogportal', 'rQN74Dyw5B', 'blogportal');
+    $db = new mysqli('localhost', 'blogportal', 'password', 'blogportal');
     if($db->connect_errno > 0){
         die('fel vid anslutning');
     }
