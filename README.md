@@ -33,12 +33,16 @@ Detta repo innehåller en Bloggportal som är designad för både stora och små
 + Skapa en mer utförlig profil för användarna (Ändra lösenord, profilbild m.m). 
 + Lägga till kommentar funktion.
 + Lägga till lika & dela funktion.
++ Vissa delar på webbplatsen har konstig CSS.
++ Bättre och mer realistisk footer. 
++ Implementering att ta bort bilder efter ett inlägg raderas. 
++ Fler bild format för användaren att ladda upp. 
 
 ### :gear: Installation och körning 
 För att köra projektet lokalt, följ dessa steg:
 1. Klona ner repot:
 
-    `git clone https://github.com/maha404/Webbutvecklings-programmet/tree/main/DT093G/Projekt`
+    `git clone https://github.com/maha404/DT093G-Projekt`
 
 2. Se till att XAMPP eller en liknande Apache-distribution finns installerad.Detta krävs för att kunna köra Apache-servern och MySQL-databasen.
 
